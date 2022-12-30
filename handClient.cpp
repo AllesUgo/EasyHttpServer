@@ -9,7 +9,6 @@
 #include "addone.h"
 #include "log.h"
 #include "ConnectionControl.h"
-#pragma comment(lib, "ws2_32.lib")
 
 /*
 errpr->0  正常

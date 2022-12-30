@@ -6,7 +6,6 @@
 #include "addone.h"
 #include "log.h"
 
-#pragma comment(lib, "ws2_32.lib")
 extern int Port;
 extern cJSON *cjsonfile;
 extern LinkLib *Linklib;
