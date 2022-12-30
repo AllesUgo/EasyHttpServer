@@ -157,6 +157,7 @@ int MakeDefaultRunTime()
 	using namespace std;
 	mkdir("conf", 0777);
 	mkdir("app", 0777);
+	mkdir("logs", 0777);
 	cJSON *json = cJSON_CreateObject();
 	cJSON_AddStringToObject(json, "MimePath", "conf/mime.json");
 	cJSON_AddNumberToObject(json, "PORT", 80);
