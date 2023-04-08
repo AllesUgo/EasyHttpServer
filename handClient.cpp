@@ -354,6 +354,7 @@ void handClient(LPVOID inPut)
 						if (i != 1024)
 						{
 							printf("[%s] [WORNING] 错误:正在从文件请求1024字节数据，但只能从文件读取到%lu字节\n",gettime().time, i);
+							break;
 						}
 					}
 					else
@@ -362,6 +363,7 @@ void handClient(LPVOID inPut)
 						if (i != p.readsize)
 						{
 							printf("[%s] [WORNING] 错误:正在从文件请求%lu字节数据，但只能从文件读取到%lu字节\n",gettime().time, p.readsize, i);
+							break;
 						}
 					}
 					if (0 > send(clientsocket, temp, i, MSG_NOSIGNAL))
@@ -405,6 +407,7 @@ void handClient(LPVOID inPut)
 						if (i != 1024)
 						{
 							printf("[%s] [WORNING] 错误:正在从文件请求1024字节数据，但只能从文件读取到%lu字节\n",gettime().time, i);
+							break;
 						}
 					}
 					else
@@ -413,6 +416,7 @@ void handClient(LPVOID inPut)
 						if (i != p.readsize)
 						{
 							printf("[%s] [WORNING] 错误:正在从文件请求%lu字节数据，但只能从文件读取到%lu字节\n",gettime().time, p.readsize, i);
+							break;
 						}
 					}
 					if (0 > send(clientsocket, temp, i, MSG_NOSIGNAL))
