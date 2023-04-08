@@ -5,7 +5,7 @@
 #include "ThreadInfo.h"
 #include "addone.h"
 #include "log.h"
-
+#include <iostream>
 extern int Port;
 extern cJSON *cjsonfile;
 extern LinkLib *Linklib;
@@ -83,6 +83,7 @@ int initserver()
 
 		char temp[1024 * 1024];
 		fread(temp, 1024, 1, fp);
+		fclose(fp);
 		cJSON *json = cJSON_Parse(temp);
 		if (json == NULL)
 		{
@@ -102,6 +103,7 @@ int initserver()
 			exit(1);
 		}
 		fread(temp, 1024 * 1024, 1, mimefile);
+		fclose(mimefile);
 		cjsonfile = cJSON_Parse(temp);
 		if (cjsonfile == NULL)
 		{
@@ -150,7 +152,7 @@ int initserver()
 		return 0;
 	}
 }
-#include <iostream>
+
 int MakeDefaultRunTime()
 {
 	using namespace std;

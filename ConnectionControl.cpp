@@ -57,9 +57,9 @@ void *ConnectionControlThread(void *ptr)
             {
                 if (0 == shutdown(temp->connectioninfo.client_socket, SHUT_RDWR))
                 {
+                    printf("[%s] [LOG] 连接%s超时已被关闭\n",gettime().time,temp->connectioninfo.address);
                     temp->tryclose = true;
                 }
-                
             }
             temp = temp->next;
         }
